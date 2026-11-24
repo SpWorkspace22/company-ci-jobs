@@ -1,0 +1,8 @@
+- name: Java-specific post-build tasks
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Display Java build completion message
+      ansible.builtin.debug:
+        msg: "Java and Maven build completed successfully"

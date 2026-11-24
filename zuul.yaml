@@ -23,7 +23,8 @@
     pre-run:
       - playbooks/java/pre-build.yaml
     run: playbooks/java-build.yaml
-
+    post-run:
+      - playbooks/java/post-build.yaml
 
 - job:
     name: python-build
