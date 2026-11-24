@@ -5,7 +5,11 @@
   tasks:
     - name: Display effective company variables
       ansible.builtin.debug:
-        msg: "Effective company name: {{ company_name }}"
+        msg:
+          - "Effective company name: {{ company_name }}"
+          - "Region: {{ company_region }}" 
+          - "Java toolchain: {{ java_toolchain }}"
+
     - name: Check Java project
       ansible.builtin.debug:
         msg: "Checking Java project structure"

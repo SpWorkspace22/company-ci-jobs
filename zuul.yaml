@@ -22,6 +22,7 @@
     description: Simulate a Java Maven application build.
     vars:
       company_name: "Java Engineering"
+      java_toolchain: "Maven"
     pre-run:
       - playbooks/java/pre-build.yaml
     run: playbooks/java-build.yaml
