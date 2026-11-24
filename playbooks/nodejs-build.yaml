@@ -3,6 +3,10 @@
   gather_facts: false
 
   tasks:
+    - name: Display inherited company variable
+      ansible.builtin.debug:
+        msg: "Node.js build belongs to {{ company_name }}"
+
     - name: Check Node.js project
       ansible.builtin.debug:
         msg: "Checking Node.js project structure"
