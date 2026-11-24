@@ -20,6 +20,8 @@
     name: java-build
     parent: base
     description: Simulate a Java Maven application build.
+    vars:
+      company_name: "Java Engineering"
     pre-run:
       - playbooks/java/pre-build.yaml
     run: playbooks/java-build.yaml

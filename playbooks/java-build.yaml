@@ -3,6 +3,9 @@
   gather_facts: false
 
   tasks:
+    - name: Display effective company variables
+      ansible.builtin.debug:
+        msg: "Effective company name: {{ company_name }}"
     - name: Check Java project
       ansible.builtin.debug:
         msg: "Checking Java project structure"
