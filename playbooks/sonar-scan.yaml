@@ -1,0 +1,13 @@
+- name: Simulate company SonarQube code quality scan
+  hosts: localhost
+  tasks:
+    - name: Display scan starting message
+      ansible.builtin.debug:
+        msg: "Starting SonarQube code quality scan"
+    - name: Display Application being scanned
+      ansible.builtin.debug:
+        msg: "Scanning application: {{ zuul.project.short_name }}"
+
+    - name: Display Scan Completion message
+      ansible.builtin.debug:
+        msg: "SonarQube scan simulation completed successfully"

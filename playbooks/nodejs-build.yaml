@@ -1,0 +1,20 @@
+- name: Simulate Node.js build pipeline
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Check Node.js project
+      ansible.builtin.debug:
+        msg: "Checking Node.js project structure"
+
+    - name: Install Node.js dependencies
+      ansible.builtin.debug:
+        msg: "Simulating npm install"
+
+    - name: Run Node.js linting
+      ansible.builtin.debug:
+        msg: "Simulating npm run lint"
+
+    - name: Build Node.js application
+      ansible.builtin.debug:
+        msg: "Simulating npm run build"

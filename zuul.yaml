@@ -1,0 +1,29 @@
+- job:
+    name: company-sonar-scan
+    parent: base
+    description: Run the company SonarQube code quality scan.
+    run: playbooks/sonar-scan.yaml
+
+- job:
+    name: company-security-scan
+    parent: base
+    description: Run the company security scanning checks.
+    run: playbooks/security-scan.yaml
+
+- job:
+    name: nodejs-build
+    parent: base
+    description: Simulate a Node.js application build.
+    run: playbooks/nodejs-build.yaml
+
+- job:
+    name: java-build
+    parent: base
+    description: Simulate a Java Maven application build.
+    run: playbooks/java-build.yaml
+
+- job:
+    name: python-build
+    parent: base
+    description: Simulate a Python application build.
+    run: playbooks/python-build.yaml
