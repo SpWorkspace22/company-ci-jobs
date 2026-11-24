@@ -20,7 +20,10 @@
     name: java-build
     parent: base
     description: Simulate a Java Maven application build.
+    pre-run:
+      - playbooks/java/pre-build.yaml
     run: playbooks/java-build.yaml
+
 
 - job:
     name: python-build

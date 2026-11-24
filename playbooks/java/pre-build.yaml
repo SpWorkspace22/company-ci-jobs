@@ -1,0 +1,8 @@
+- name: Java-specific preparation
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Display Java preparation message
+      ansible.builtin.debug:
+        msg: "Preparing Java and Maven build environment"
