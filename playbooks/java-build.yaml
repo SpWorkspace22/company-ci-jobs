@@ -3,11 +3,18 @@
   gather_facts: false
 
   tasks:
+    - name: Validate build profile
+      ansible.builtin.assert:
+        that:
+          - build_profile in ['standard', 'release']
+        fail_msg: "Unsupported build_profile: {{ build_profile }}"
+        success_msg: "Build profile '{{ build_profile }}' is valid"
+
     - name: Display effective company variables
       ansible.builtin.debug:
         msg:
           - "Effective company name: {{ company_name }}"
-          - "Region: {{ company_region }}" 
+          - "Region: {{ company_region }}"
           - "Java toolchain: {{ java_toolchain }}"
 
     - name: Check Java project
@@ -25,3 +32,13 @@
     - name: Package Java application
       ansible.builtin.debug:
         msg: "Simulating mvn package"
+
+    - name: Execute standard build profile
+      ansible.builtin.debug:
+        msg: "Executing STANDARD Maven build for {{ company_name }}"
+      when: build_profile == 'standard'
+
+    - name: Execute release build profile
+      ansible.builtin.debug:
+        msg: "Executing RELEASE Maven build for {{ company_name }}"
+      when: build_profile == 'release'

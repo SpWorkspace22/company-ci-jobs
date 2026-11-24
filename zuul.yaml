@@ -23,6 +23,7 @@
     vars:
       company_name: "Java Engineering"
       java_toolchain: "Maven"
+      build_profile: "standard"
     pre-run:
       - playbooks/java/pre-build.yaml
     run: playbooks/java-build.yaml
