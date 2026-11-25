@@ -49,6 +49,6 @@
     parent: base
     description: Run integration tests after Node.js and Java builds.
     dependencies:
-      - nodejs-build
+      - nodejs-test
       - java-build
     run: playbooks/integration-test.yaml
