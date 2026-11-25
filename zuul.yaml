@@ -43,3 +43,12 @@
     parent: base
     description: Simulate a Python application build.
     run: playbooks/python-build.yaml
+
+- job:
+    name: integration-test
+    parent: base
+    description: Run integration tests after Node.js and Java builds.
+    dependencies:
+      - nodejs-build
+      - java-build
+    run: playbooks/integration-test.yaml
