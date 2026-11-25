@@ -2,6 +2,13 @@
     name: company-sonar-scan
     parent: base
     description: Run the company SonarQube code quality scan.
+    dependencies:
+      - name: nodejs-test
+        soft: true
+      - name: java-build
+        soft: true
+      - name: python-build
+        soft: true
     run: playbooks/sonar-scan.yaml
 
 - job:
