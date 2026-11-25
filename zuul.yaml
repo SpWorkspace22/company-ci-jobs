@@ -17,6 +17,14 @@
     run: playbooks/nodejs-build.yaml
 
 - job:
+    name: nodejs-test
+    parent: base
+    description: Run Node.js tests after the application build
+    dependencies:
+      - nodejs-build
+    run: playbooks/nodejs-test.yaml
+
+- job:
     name: java-build
     parent: base
     description: Simulate a Java Maven application build.
