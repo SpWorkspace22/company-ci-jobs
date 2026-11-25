@@ -11,6 +11,10 @@
       ansible.builtin.debug:
         msg: "Simulating npm test"
 
+    - name: Intentionally fail Node.js tests for dependency experiment
+      ansible.builtin.fail:
+        msg: "Intentional failure to test Zuul hard dependency behavior"
+
     - name: Report test result
       ansible.builtin.debug:
         msg: "Node.js tests completed successfully"
