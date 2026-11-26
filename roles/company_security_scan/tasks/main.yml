@@ -5,7 +5,7 @@
 
 - name: Simulate dependency security check
   ansible.builtin.debug:
-    msg: "Checking application dependencies for known vulnerabilities"
+    msg: "Running {{ company_security_scan_category }} dependency checks"
 
 - name: Simulate configuration security check
   ansible.builtin.debug:
