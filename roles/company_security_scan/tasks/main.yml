@@ -14,3 +14,9 @@
 - name: Display security scan completion message
   ansible.builtin.debug:
     msg: "Security scan simulation completed successfully"
+
+- name: Simulate security scan configuration change
+  ansible.builtin.debug:
+    msg: "Security scan configuration has changed"
+  changed_when: true
+  notify: Reload security scan configuration

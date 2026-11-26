@@ -1,0 +1,4 @@
+---
+- name: Reload security scan configuration
+  ansible.builtin.debug:
+    msg: "Handler executed: Reloading security scan configuration"
