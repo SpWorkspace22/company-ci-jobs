@@ -3,8 +3,5 @@
   hosts: localhost
   gather_facts: false
 
-  vars:
-    company_security_scan_name: "Playbook Security Scan"
-
   roles:
     - company_security_scan

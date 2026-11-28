@@ -20,6 +20,14 @@
     run: playbooks/security-scan.yaml
 
 - job:
+    name: company-security-audit
+    parent: base
+    description: Run the company security audit using the shared security role.
+    vars:
+      company_security_scan_name: "Payment Service Security Audit"
+    run: playbooks/security-scan.yaml
+
+- job:
     name: nodejs-build
     parent: base
     description: Simulate a Node.js application build.
