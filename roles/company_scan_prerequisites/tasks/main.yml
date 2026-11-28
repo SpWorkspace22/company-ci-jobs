@@ -1,0 +1,4 @@
+---
+- name: Prepare security scan environment
+  ansible.builtin.debug:
+    msg: "Preparing environment before security scanning"
