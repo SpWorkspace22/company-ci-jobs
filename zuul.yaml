@@ -70,11 +70,6 @@
       - java-build
     run: playbooks/integration-test.yaml
 
-- nodeset:
-    name: company-kubernetes-smoke-nodeset
-    nodes:
-      - name: worker
-        label: company-ubuntu-jammy
 
 - job:
     name: company-kubernetes-worker-smoke
