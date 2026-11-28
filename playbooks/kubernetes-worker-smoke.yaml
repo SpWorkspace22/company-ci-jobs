@@ -1,0 +1,23 @@
+- name: Verify Zuul Kubernetes worker pod
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - name: Display worker identity and operating system
+      ansible.builtin.debug:
+        msg:
+          - "Hostname: {{ ansible_hostname }}"
+          - "Distribution: {{ ansible_distribution }}"
+          - "Version: {{ ansible_distribution_version }}"
+          - "Release: {{ ansible_distribution_release }}"
+          - "Kernel: {{ ansible_kernel }}"
+          - "Architecture: {{ ansible_architecture }}"
+
+    - name: Verify worker is Ubuntu 22.04 Jammy
+      ansible.builtin.assert:
+        that:
+          - ansible_distribution == "Ubuntu"
+          - ansible_distribution_version == "22.04"
+          - ansible_distribution_release == "jammy"
+        fail_msg: "The provisioned worker is not Ubuntu 22.04 Jammy."
+        success_msg: "Verified: job is running on an Ubuntu 22.04 Jammy worker."

@@ -69,3 +69,16 @@
       - nodejs-test
       - java-build
     run: playbooks/integration-test.yaml
+
+- nodeset:
+    name: company-kubernetes-smoke-nodeset
+    nodes:
+      - name: worker
+        label: company-ubuntu-jammy
+
+- job:
+    name: company-kubernetes-worker-smoke
+    parent: base
+    description: Verify that Zuul provisions and executes a job on an Ubuntu Jammy Kubernetes worker pod.
+    nodeset: company-kubernetes-smoke-nodeset
+    run: playbooks/kubernetes-worker-smoke.yaml
