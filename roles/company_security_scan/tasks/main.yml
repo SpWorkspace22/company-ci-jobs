@@ -31,3 +31,27 @@
 - name: Show generated configuration
   ansible.builtin.debug:
     var: security_scan_config.stdout
+
+- name: Create security scan configuration directory
+  ansible.builtin.file:
+    path: /tmp/company-security-scan
+    state: directory
+    mode: "0750"
+
+- name: Create security scan README
+  ansible.builtin.copy:
+    content: |
+      Company Security Scan
+      Managed by Ansible through Zuul.
+    dest: /tmp/company-security-scan/README.txt
+    mode: "0640"
+
+- name: Display security scan directory details
+  ansible.builtin.command:
+    cmd: ls -ld /tmp/company-security-scan /tmp/company-security-scan/README.txt
+  register: security_scan_file_details
+  changed_when: false
+
+- name: Show security scan directory details
+  ansible.builtin.debug:
+    var: security_scan_file_details.stdout
